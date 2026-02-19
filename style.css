@@ -144,10 +144,3 @@ h1 {
     }
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
