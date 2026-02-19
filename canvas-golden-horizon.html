@@ -39,14 +39,23 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+function fadeInPage() {
+    document.body.classList.remove("fade-in");
+    void document.body.offsetWidth; // force reflow
     document.body.classList.add("fade-in");
+}
+
+// Normal load
+document.addEventListener("DOMContentLoaded", fadeInPage);
+
+// Fix for back/forward navigation
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        fadeInPage();
+    }
 });
 
-window.addEventListener("pageshow", function () {
-    document.body.classList.add("fade-in");
-});
-
+// Fade out on link click
 document.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", function (e) {
         const target = this.getAttribute("href");
@@ -56,7 +65,7 @@ document.querySelectorAll("a").forEach(link => {
             document.body.style.opacity = "0";
             setTimeout(() => {
                 window.location.href = target;
-            }, 400);
+            }, 300);
         }
     });
 });

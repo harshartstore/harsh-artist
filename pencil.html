@@ -110,40 +110,21 @@ h1 {
 
   
     <!-- ADD MORE CARDS BELOW -->
-    
-</div>
-    </div>  <!-- your gallery closing div if any -->
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("fade-in");
-});
-
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href");
-
-        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = target;
-            }, 400);
-        }
-    });
-});
-</script>
 <script>
 function fadeInPage() {
+    document.body.classList.remove("fade-in");
+    void document.body.offsetWidth; // force reflow
     document.body.classList.add("fade-in");
 }
 
 // Normal load
 document.addEventListener("DOMContentLoaded", fadeInPage);
 
-// Back/forward button fix
-window.addEventListener("pageshow", function () {
-    document.body.classList.add("fade-in");
+// Fix for back/forward navigation
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        fadeInPage();
+    }
 });
 
 // Fade out on link click
@@ -156,7 +137,7 @@ document.querySelectorAll("a").forEach(link => {
             document.body.style.opacity = "0";
             setTimeout(() => {
                 window.location.href = target;
-            }, 400);
+            }, 300);
         }
     });
 });
