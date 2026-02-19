@@ -4,7 +4,8 @@ body {
     padding: 40px;
     background-color: #0a0a0a;
     color: #e8e8e8;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', serif;
+
 
     opacity: 0;
     transition: opacity 0.4s ease;

@@ -102,8 +102,8 @@ h1 {
 
 <div class="divider"></div>
 
-<a href="http://127.0.0.1:5500/pencil.html" class="link-btn">Pencil Art Collection</a>
-<a href="http://127.0.0.1:5500/canvas.html" class="link-btn">Canvas Paintings</a>
+<a href="pencil.html" class="link-btn">Pencil Art Collection</a>
+<a href="canvas.html" class="link-btn">Canvas Paintings</a>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6IqSjWb8KroQSoZvECRK2UwisfipoLQyG-yZJDdLFKaeZ6w/viewform?usp=pp_url&entry.2017152660=in+evening+7+to+9+pm+(Indian+timeline,+can+also+vary+accordingly+to+the+difference+in+timelines+during+online+class)&entry.615282475=%E2%82%B9150+or+$1.65(usd)+students+can+convert+it+into+their+currency)" class="link-btn">join art classses</a>
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMq9LK7_BzJwMTosSlowYgc3Hez8zUVLzx01kYt9OwrbuksA/viewform?usp=header" class="link-btn">Request Custom Artwork</a>
 <a href="https://www.instagram.com/harshdeep_pencil_artist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="link-btn">Instagram</a>
@@ -113,25 +113,6 @@ h1 {
 Original Works Only • One of One
 </div>
 
-document.addEventListener("DOMContentLoaded", fadeInPage);
-
-window.addEventListener("pageshow", function () {
-    document.body.classList.add("fade-in");
-});
-
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href");
-
-        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = target;
-            }, 400);
-        }
-    });
-});
 
 </body>
 </html>
