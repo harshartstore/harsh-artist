@@ -6,70 +6,113 @@
 <title>Golden Horizon – Harsh Art Gallery</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #0a0a0a;
+    font-family: 'Cormorant Garamond', serif;
+    color: #e8e8e8;
+    padding: 40px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.art-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.art-details h1 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #00e5ff;
+}
+
+.price {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #00e5ff;
+}
+
+.meta {
+    margin: 15px 0;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.description {
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #00e5ff;
+    color: #0a0a0a;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <div class="art-image">
-        <img src="canvas1.jpg" alt="Golden Horizon">
+<div class="art-image">
+    <img src="canvas1.jpg" alt="canvas golden horizon">
+</div>
+
+<div class="art-details">
+    <h1>Golden Horizon</h1>
+
+    <div class="price">₹ 20,000</div>
+
+    <div class="meta">
+        Size: 50 × 40 cm<br>
+        Medium: tube color on canvas <br>
+        Year: 2026<br>
+        Availability: Original – One of One
     </div>
 
-    <div class="art-details">
-        <h1>Golden Horizon</h1>
-
-        <p class="description">
-            Acrylic on canvas exploring warmth and light.
-        </p>
-
-        <p class="availability">
-            Original Artwork • 1 of 1 • Available
-        </p>
-
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/viewform?usp=pp_url&entry.96881697=Golden-Horizon"
-           target="_blank"
-           class="buy-btn">
-           Request Purchase
-        </a>
+    <div class="description">
+        presenting a breathtaking canvas painting that captures the essence of a golden horizon. This artwork is a testament to the artist's skill in blending colors and creating a serene atmosphere. The warm hues of gold and orange seamlessly transition into the cool blues of the sky, evoking a sense of tranquility and awe. The intricate brushstrokes add depth and texture, making it feel as though you could step into the scene and experience the beauty of the horizon firsthand. Whether displayed in a living room or an art gallery, this piece is sure to captivate viewers and inspire contemplation.
     </div>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSf57uXL9NznnMRHBB3M6rXL4WxbMxK_3jfCrBpHko4zx6lM0g/viewform?usp=pp_url&entry.96881697=Golden+Horizon" class="buy-btn">
+    Request Purchase
+</a>
+
 
 </div>
 
-<script>
-function fadeInPage() {
-    document.body.classList.remove("fade-in");
-    void document.body.offsetWidth; // force reflow
-    document.body.classList.add("fade-in");
-}
-
-// Normal load
-document.addEventListener("DOMContentLoaded", fadeInPage);
-
-// Fix for back/forward navigation
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        fadeInPage();
-    }
-});
-
-// Fade out on link click
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href");
-
-        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = target;
-            }, 300);
-        }
-    });
-});
-</script>
 
 </body>
 </html>
+

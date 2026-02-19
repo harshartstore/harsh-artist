@@ -110,38 +110,6 @@ h1 {
 
   
     <!-- ADD MORE CARDS BELOW -->
-<script>
-function fadeInPage() {
-    document.body.classList.remove("fade-in");
-    void document.body.offsetWidth; // force reflow
-    document.body.classList.add("fade-in");
-}
-
-// Normal load
-document.addEventListener("DOMContentLoaded", fadeInPage);
-
-// Fix for back/forward navigation
-window.addEventListener("pageshow", function (event) {
-    if (event.persisted) {
-        fadeInPage();
-    }
-});
-
-// Fade out on link click
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href");
-
-        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = target;
-            }, 300);
-        }
-    });
-});
-</script>
 
 </body>
 </html>
