@@ -24,28 +24,8 @@
             <a href="canvas-golden-horizon.html" class="view-btn">View Full</a>
         </div>
     </div>
-</div>
-    </div>  <!-- your gallery closing div if any -->
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("fade-in");
-});
 
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href");
-
-        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = target;
-            }, 400);
-        }
-    });
-});
-</script>
 <script>
 function fadeInPage() {
     document.body.classList.add("fade-in");

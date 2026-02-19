@@ -113,11 +113,9 @@ h1 {
 Original Works Only • One of One
 </div>
 
-</div>
-    </div>  <!-- your gallery closing div if any -->
+document.addEventListener("DOMContentLoaded", fadeInPage);
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("pageshow", function () {
     document.body.classList.add("fade-in");
 });
 
@@ -134,10 +132,6 @@ document.querySelectorAll("a").forEach(link => {
         }
     });
 });
-</script>
-
-</body>
-</html>
 
 </body>
 </html>
