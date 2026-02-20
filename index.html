@@ -113,26 +113,6 @@ h1 {
 Original Works Only • One of One
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("fade-in");
-});
-
-document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", function (e) {
-        const target = this.getAttribute("href");
-
-        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
-            e.preventDefault();
-            document.body.style.opacity = "0";
-            setTimeout(() => {
-                window.location.href = target;
-            }, 400);
-        }
-    });
-});
-</script>
-
 </body>
 </html>
 
